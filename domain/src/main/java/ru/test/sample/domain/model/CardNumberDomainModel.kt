@@ -1,6 +1,6 @@
 package ru.test.sample.domain.model
 
-data class CardNumber(
+data class CardNumberDomainModel(
     val length: Int,
     val luhn: Boolean
 )

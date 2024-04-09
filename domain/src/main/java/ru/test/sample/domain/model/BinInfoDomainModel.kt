@@ -1,6 +1,6 @@
 package ru.test.sample.domain.model
 
-data class BinInfo(
+data class BinInfoDomainModel(
     val bin: String,
     val cardNumberLength: Int,
     val isLuhn: Boolean,

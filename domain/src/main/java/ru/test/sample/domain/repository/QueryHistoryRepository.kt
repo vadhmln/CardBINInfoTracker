@@ -1,9 +1,9 @@
 package ru.test.sample.domain.repository
 
-import ru.test.sample.domain.model.QueryHistoryItem
+import ru.test.sample.domain.model.QueryHistoryItemDomainModel
 
 interface QueryHistoryRepository {
-    fun getQueryHistory(): Result<List<QueryHistoryItem>>
+    fun getQueryHistory(): Result<List<QueryHistoryItemDomainModel>>
 
-    fun saveQuery(queryHistoryItem: QueryHistoryItem): Result<Unit>
+    fun saveQuery(queryHistoryItemDomainModel: QueryHistoryItemDomainModel): Result<Unit>
 }

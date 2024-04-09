@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Card BIN Info Tracker"
 include(":app")
 include(":domain")
+include(":data")

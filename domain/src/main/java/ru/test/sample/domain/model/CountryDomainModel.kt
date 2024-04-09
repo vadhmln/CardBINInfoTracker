@@ -1,6 +1,6 @@
 package ru.test.sample.domain.model
 
-data class Country(
+data class CountryDomainModel(
     val numeric: String,
     val alpha2: String,
     val name: String,
