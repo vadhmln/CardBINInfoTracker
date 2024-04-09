@@ -6,7 +6,7 @@ import ru.test.sample.data.model.CardNumberDataModel
 import ru.test.sample.data.model.CountryDataModel
 import ru.test.sample.domain.model.CardInfoDomainModel
 
-class CardinfoDomainToDataMapper {
+class CardInfoDomainToDataMapper {
 
     fun toData(input: CardInfoDomainModel) =
         CardInfoDataModel(

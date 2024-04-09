@@ -1,12 +1,12 @@
 package ru.test.sample.data.repository
 
-import ru.test.sample.data.datasource.BinDataSource
+import ru.test.sample.data.datasource.CardInfoDataSource
 import ru.test.sample.data.mapper.CardInfoDataToDomainMapper
 import ru.test.sample.domain.model.CardInfoDomainModel
 import ru.test.sample.domain.repository.CardInfoRepository
 
 class CardInfoRepositoryImpl(
-    private val dataSource: BinDataSource,
+    private val dataSource: CardInfoDataSource,
     private val cardInfoDataToDomainMapper: CardInfoDataToDomainMapper
 ) : CardInfoRepository {
 
