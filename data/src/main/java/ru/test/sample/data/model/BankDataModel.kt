@@ -1,6 +1,6 @@
-package ru.test.sample.domain.model
+package ru.test.sample.data.model
 
-data class BankDomainModel(
+data class BankDataModel(
     val name: String = "",
     val url: String = "",
     val phone: String = "",

@@ -1,10 +1,10 @@
 package ru.test.sample.domain.usecase
 
-import ru.test.sample.domain.model.BinInfoDomainModel
-import ru.test.sample.domain.repository.BinInfoRepository
+import ru.test.sample.domain.model.CardInfoDomainModel
+import ru.test.sample.domain.repository.CardInfoRepository
 
-class GetBinInfoUseCase(private val binInfoRepository: BinInfoRepository) {
-    suspend fun execute(bin: String): Result<BinInfoDomainModel> {
-        return binInfoRepository.getBinInfo(bin)
+class GetBinInfoUseCase(private val cardInfoRepository: CardInfoRepository) {
+    suspend fun execute(bin: String): Result<CardInfoDomainModel> {
+        return cardInfoRepository.getBinInfo(bin)
     }
 }
