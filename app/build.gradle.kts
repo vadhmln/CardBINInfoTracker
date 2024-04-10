@@ -54,6 +54,9 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -65,9 +68,17 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
-    implementation(project(":data"))
-    implementation(project(":domain"))
     kapt(libs.hilt.compiler)
+
+    //Retrofit
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.kotlinx.serialization.json)
+
+    //Sandwich
+    implementation(libs.sandwich)
+    implementation(libs.sandwich.retrofit)
+    implementation(libs.sandwich.retrofit.serialization)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
