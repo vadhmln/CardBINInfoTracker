@@ -65,6 +65,8 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
+    implementation(project(":data"))
+    implementation(project(":domain"))
     kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
