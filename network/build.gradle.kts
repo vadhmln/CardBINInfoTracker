@@ -1,11 +1,11 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    id("kotlinx-serialization")
 }
 
 android {
-    namespace = "ru.test.sample.data"
+    namespace = "ru.test.sample.network"
     compileSdk = 34
 
     defaultConfig {
@@ -35,10 +35,15 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
+
+    //Retrofit
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(project(":data"))
 
     //Sandwich
     implementation(libs.sandwich)

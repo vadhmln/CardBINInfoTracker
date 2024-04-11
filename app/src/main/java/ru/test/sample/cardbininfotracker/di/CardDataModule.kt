@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ru.test.sample.data.datasource.CardInfoDataSource
+import ru.test.sample.data.datasource.CardInfoRemote
 import ru.test.sample.data.mapper.CardInfoDataToDomainMapper
 import ru.test.sample.data.mapper.CardInfoDomainToDataMapper
 import ru.test.sample.data.repository.CardInfoRepositoryImpl
@@ -24,7 +24,7 @@ class CardDataModule {
     @Provides
     @Singleton
     fun provideCardInfoRepository(
-        dataSource: CardInfoDataSource,
+        dataSource: CardInfoRemote,
         cardInfoDataToDomainMapper: CardInfoDataToDomainMapper,
     ): CardInfoRepository = CardInfoRepositoryImpl(
         dataSource,
