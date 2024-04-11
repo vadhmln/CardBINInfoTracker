@@ -17,20 +17,20 @@ class CardInfoRemoteToDataMapper {
             scheme = input.scheme,
             type = input.type,
             brand = input.brand,
-            countryDomainModel = CountryDataModel(
-                numeric = input.countryDomainModel.numeric,
-                alpha2 = input.countryDomainModel.alpha2,
-                name = input.countryDomainModel.name,
-                emoji = input.countryDomainModel.emoji,
-                currency = input.countryDomainModel.currency,
-                latitude = input.countryDomainModel.latitude,
-                longitude = input.countryDomainModel.longitude,
+            countryDataModel = CountryDataModel(
+                numeric = input.countryResponse.numeric,
+                alpha2 = input.countryResponse.alpha2,
+                name = input.countryResponse.name,
+                emoji = input.countryResponse.emoji,
+                currency = input.countryResponse.currency,
+                latitude = input.countryResponse.latitude,
+                longitude = input.countryResponse.longitude,
             ),
-            bankDomainModel = BankDataModel(
-                name = input.bankDomainModel.name,
-                url = input.bankDomainModel.url,
-                phone = input.bankDomainModel.phone,
-                city = input.bankDomainModel.city,
+            bankDataModel = BankDataModel(
+                name = input.bankResponse.name,
+                url = input.bankResponse.url,
+                phone = input.bankResponse.phone,
+                city = input.bankResponse.city,
             ),
         )
 }

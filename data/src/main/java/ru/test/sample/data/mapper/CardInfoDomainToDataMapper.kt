@@ -17,7 +17,7 @@ class CardInfoDomainToDataMapper {
             scheme = input.scheme,
             type = input.type,
             brand = input.brand,
-            countryDomainModel = CountryDataModel(
+            countryDataModel = CountryDataModel(
                 numeric = input.countryDomainModel.numeric,
                 alpha2 = input.countryDomainModel.alpha2,
                 name = input.countryDomainModel.name,
@@ -26,7 +26,7 @@ class CardInfoDomainToDataMapper {
                 latitude = input.countryDomainModel.latitude,
                 longitude = input.countryDomainModel.longitude,
             ),
-            bankDomainModel = BankDataModel(
+            bankDataModel = BankDataModel(
                 name = input.bankDomainModel.name,
                 url = input.bankDomainModel.url,
                 phone = input.bankDomainModel.phone,

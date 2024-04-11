@@ -4,10 +4,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CardInfoResponse(
-    val number: CardNumberResponse,
+    val number: CardNumberResponse = CardNumberResponse(),
     val scheme: String = "",
     val type: String = "",
     val brand: String = "",
-    val countryDomainModel: CountryResponse,
-    val bankDomainModel: BankResponse
+    val countryResponse: CountryResponse = CountryResponse(),
+    val bankResponse: BankResponse = BankResponse(),
 )

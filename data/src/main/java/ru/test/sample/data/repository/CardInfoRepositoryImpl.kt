@@ -1,5 +1,6 @@
 package ru.test.sample.data.repository
 
+import android.util.Log
 import com.skydoves.sandwich.suspendOnSuccess
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -15,11 +16,12 @@ class CardInfoRepositoryImpl(
     private val cardInfoDataToDomainMapper: CardInfoDataToDomainMapper
 ) : CardInfoRepository {
 
-    override suspend fun getBinInfo(bin: String): Flow<CardInfoDomainModel> = flow {
+    override suspend fun getBinInfo(bin: String) = flow {
         val response = remoteDataSource.getCardInfo(bin)
 
         response.suspendOnSuccess {
             val card = cardInfoDataToDomainMapper.toDomain(data)
+            Log.d("remoteDataSource", "$card")
 
             emit(card)
         }

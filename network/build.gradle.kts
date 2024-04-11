@@ -35,6 +35,8 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -43,7 +45,6 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.kotlinx.serialization.json)
-    implementation(project(":data"))
 
     //Sandwich
     implementation(libs.sandwich)

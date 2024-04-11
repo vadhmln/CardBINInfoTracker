@@ -4,11 +4,11 @@ import ru.test.sample.cardbininfotracker.model.BankPresentationModel
 import ru.test.sample.cardbininfotracker.model.CardInfoPresentationModel
 import ru.test.sample.cardbininfotracker.model.CardNumberPresentationModel
 import ru.test.sample.cardbininfotracker.model.CountryPresentationModel
-import ru.test.sample.data.model.CardInfoDataModel
+import ru.test.sample.domain.model.CardInfoDomainModel
 
-class CardInfoDataToPresentationMapper {
+class CardInfoDomainToPresentationMapper {
 
-    fun toPresentation(input: CardInfoDataModel) =
+    fun toPresentation(input: CardInfoDomainModel) =
         CardInfoPresentationModel(
             number = CardNumberPresentationModel(
                 length = input.number.length,
@@ -17,7 +17,7 @@ class CardInfoDataToPresentationMapper {
             scheme = input.scheme,
             type = input.type,
             brand = input.brand,
-            countryDomainModel = CountryPresentationModel(
+            countryPresentationModel = CountryPresentationModel(
                 numeric = input.countryDomainModel.numeric,
                 alpha2 = input.countryDomainModel.alpha2,
                 name = input.countryDomainModel.name,
@@ -26,7 +26,7 @@ class CardInfoDataToPresentationMapper {
                 latitude = input.countryDomainModel.latitude,
                 longitude = input.countryDomainModel.longitude,
             ),
-            bankDomainModel = BankPresentationModel(
+            bankPresentationModel = BankPresentationModel(
                 name = input.bankDomainModel.name,
                 url = input.bankDomainModel.url,
                 phone = input.bankDomainModel.phone,

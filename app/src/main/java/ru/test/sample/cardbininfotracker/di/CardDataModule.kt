@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ru.test.sample.cardbininfotracker.mapper.CardInfoDomainToPresentationMapper
 import ru.test.sample.data.datasource.CardInfoRemote
 import ru.test.sample.data.mapper.CardInfoDataToDomainMapper
 import ru.test.sample.data.mapper.CardInfoDomainToDataMapper
@@ -20,6 +21,9 @@ class CardDataModule {
 
     @Provides
     fun provideCardInfoDomainToDataMapper() = CardInfoDomainToDataMapper()
+
+    @Provides
+    fun provideCardInfoDomainToPresentationMapper() = CardInfoDomainToPresentationMapper()
 
     @Provides
     @Singleton

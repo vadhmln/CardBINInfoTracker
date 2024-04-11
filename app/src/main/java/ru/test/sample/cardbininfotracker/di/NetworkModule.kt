@@ -10,6 +10,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import ru.test.sample.network.CardInfoService
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -41,5 +42,17 @@ object NetworkModule {
             .addConverterFactory(networkJson.asConverterFactory("application/json".toMediaType()))
             .addCallAdapterFactory(ApiResponseCallAdapterFactory.create())
             .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideCardInfoService(retrofit: Retrofit): CardInfoService {
+        return retrofit.create(CardInfoService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesNetworkJson(): Json = Json {
+        ignoreUnknownKeys = true
     }
 }

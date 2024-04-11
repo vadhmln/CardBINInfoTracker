@@ -5,6 +5,6 @@ data class CardInfoDataModel(
     val scheme: String = "",
     val type: String = "",
     val brand: String = "",
-    val countryDomainModel: CountryDataModel,
-    val bankDomainModel: BankDataModel
+    val countryDataModel: CountryDataModel,
+    val bankDataModel: BankDataModel
 )
