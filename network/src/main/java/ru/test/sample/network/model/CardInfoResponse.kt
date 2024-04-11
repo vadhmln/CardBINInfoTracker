@@ -8,6 +8,6 @@ data class CardInfoResponse(
     val scheme: String = "",
     val type: String = "",
     val brand: String = "",
-    val countryResponse: CountryResponse = CountryResponse(),
-    val bankResponse: BankResponse = BankResponse(),
+    val country: CountryResponse = CountryResponse(),
+    val bank: BankResponse = BankResponse(),
 )

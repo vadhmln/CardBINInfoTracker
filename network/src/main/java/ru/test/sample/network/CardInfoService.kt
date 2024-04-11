@@ -8,7 +8,6 @@ import ru.test.sample.network.model.CardInfoResponse
 
 interface CardInfoService {
 
-    @Headers("Accept-Version: 3")
     @GET("{bin}")
     suspend fun getCardInfo(
         @Path("bin") bin: String,

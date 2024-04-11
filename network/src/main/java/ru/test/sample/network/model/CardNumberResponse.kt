@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CardNumberResponse(
-    val length: Int = 0,
-    val luhn: Boolean = false
+    val length: Int = 10,
+    val luhn: Boolean = true
 )

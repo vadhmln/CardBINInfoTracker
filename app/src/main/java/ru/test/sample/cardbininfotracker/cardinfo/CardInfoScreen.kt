@@ -43,6 +43,7 @@ fun CardInfoScreen(viewModel: CardInfoViewModel) {
         cardInfo?.let { info ->
             Text("Схема карты: ${info.scheme}")
             Text("Тип карты: ${info.type}")
+            Text("Бренд карты: ${info.brand}")
             Text("Банк: ${info.bankPresentationModel.name}")
             Text("URL банка: ${info.bankPresentationModel.url}")
             Text("Страна: ${info.countryPresentationModel.name}")
