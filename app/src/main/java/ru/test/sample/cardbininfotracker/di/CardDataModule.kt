@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ru.test.sample.cardbininfotracker.mapper.CardInfoDomainToPresentationMapper
+import ru.test.sample.cardbininfotracker.presentation.mapper.CardInfoDomainToPresentationMapper
 import ru.test.sample.data.datasource.CardInfoLocal
 import ru.test.sample.data.datasource.CardInfoRemote
 import ru.test.sample.data.mapper.CardInfoDataToDomainMapper

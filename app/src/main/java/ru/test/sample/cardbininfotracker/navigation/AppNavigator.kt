@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ru.test.sample.cardbininfotracker.cardinfo.CardInfoScreen
-import ru.test.sample.cardbininfotracker.cardinfo.CardInfoViewModel
-import ru.test.sample.cardbininfotracker.cardinfo.CardListScreen
+import ru.test.sample.cardbininfotracker.ui.view.CardInfoScreen
+import ru.test.sample.cardbininfotracker.presentation.CardInfoViewModel
+import ru.test.sample.cardbininfotracker.ui.view.CardListScreen
 
 @Composable
 fun AppNavigator(viewModel: CardInfoViewModel) {

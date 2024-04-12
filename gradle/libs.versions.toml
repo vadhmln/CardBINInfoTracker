@@ -11,7 +11,8 @@ compose-bom = "2024.04.00"
 org-jetbrains-kotlin-jvm = "1.9.0"
 appcompat = "1.6.1"
 material = "1.11.0"
-androidxLifecycle = "2.7.0"
+androidxLifecycle = "2.7.7"
+androidxNavigation = "2.7.7"
 
 lifecycleComposeLivedata = "1.6.5"
 
@@ -57,6 +58,8 @@ lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-core", ve
 lifecycle-compose-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "lifecycleComposeLivedata" }
 lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
 lifecycle-compiler = { module = "androidx.lifecycle:lifecycle-compiler", version.ref = "androidxLifecycle" }
+androidx-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigation" }
+
 
 #Room
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }

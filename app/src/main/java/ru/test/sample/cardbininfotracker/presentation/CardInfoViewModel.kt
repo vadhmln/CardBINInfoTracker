@@ -1,4 +1,4 @@
-package ru.test.sample.cardbininfotracker.cardinfo
+package ru.test.sample.cardbininfotracker.presentation
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
@@ -7,8 +7,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.map
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
-import ru.test.sample.cardbininfotracker.mapper.CardInfoDomainToPresentationMapper
-import ru.test.sample.cardbininfotracker.model.CardInfoPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.mapper.CardInfoDomainToPresentationMapper
+import ru.test.sample.cardbininfotracker.presentation.model.CardInfoPresentationModel
 import ru.test.sample.domain.usecase.GetAllCardsUseCase
 import ru.test.sample.domain.usecase.GetCardInfoUseCase
 import javax.inject.Inject

@@ -35,13 +35,14 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
 
     //Room
     implementation(libs.room.runtime)
-    implementation(project(":data"))
     kapt(libs.room.compiler)
     implementation(libs.room.ktx)
     androidTestImplementation(libs.room.testing)

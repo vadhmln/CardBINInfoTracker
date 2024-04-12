@@ -1,9 +1,9 @@
-package ru.test.sample.cardbininfotracker.mapper
+package ru.test.sample.cardbininfotracker.presentation.mapper
 
-import ru.test.sample.cardbininfotracker.model.BankPresentationModel
-import ru.test.sample.cardbininfotracker.model.CardInfoPresentationModel
-import ru.test.sample.cardbininfotracker.model.CardNumberPresentationModel
-import ru.test.sample.cardbininfotracker.model.CountryPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.model.BankPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.model.CardInfoPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.model.CardNumberPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.model.CountryPresentationModel
 import ru.test.sample.domain.model.CardInfoDomainModel
 
 class CardInfoDomainToPresentationMapper {

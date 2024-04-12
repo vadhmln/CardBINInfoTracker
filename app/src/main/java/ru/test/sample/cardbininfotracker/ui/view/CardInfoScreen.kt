@@ -1,4 +1,4 @@
-package ru.test.sample.cardbininfotracker.cardinfo
+package ru.test.sample.cardbininfotracker.ui.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
+import ru.test.sample.cardbininfotracker.presentation.CardInfoViewModel
 
 @Composable
 fun CardInfoScreen(
@@ -35,7 +36,7 @@ fun CardInfoScreen(
         OutlinedTextField(
             value = bin,
             onValueChange = { viewModel.onBinChanged(it) },
-            label = { Text("Введите BIN") },
+            label = { Text("Введите 8 цифр карты") },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )

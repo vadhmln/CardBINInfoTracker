@@ -1,4 +1,4 @@
-package ru.test.sample.cardbininfotracker.model
+package ru.test.sample.cardbininfotracker.presentation.model
 
 data class QueryHistoryItemPresentationModel(
     val bin: String = "",

@@ -67,7 +67,7 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
-    implementation ("androidx.navigation:navigation-compose:2.7.7")
+    implementation (libs.androidx.navigation)
 
     implementation(libs.lifecycle.runtime.ktx)
     implementation (libs.lifecycle.compose.livedata)

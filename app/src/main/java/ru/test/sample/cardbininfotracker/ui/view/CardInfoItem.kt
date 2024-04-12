@@ -1,4 +1,4 @@
-package ru.test.sample.cardbininfotracker.cardinfo
+package ru.test.sample.cardbininfotracker.ui.view
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -6,7 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.test.sample.cardbininfotracker.model.CardInfoPresentationModel
+import ru.test.sample.cardbininfotracker.presentation.model.CardInfoPresentationModel
 
 @Composable
 fun CardInfoItem(cardInfo: CardInfoPresentationModel) {
