@@ -26,7 +26,6 @@ class CardInfoRepositoryImpl(
 
         response.suspendOnSuccess {
             val card = cardInfoDataToDomainMapper.toDomain(data)
-            Log.d("remoteDataSource", "$card")
 
             cardInfoLocal.insert(cardInfoDomainToDataMapper.toData(card))
 
@@ -39,5 +38,4 @@ class CardInfoRepositoryImpl(
         cardInfoLocal.getAllCards().map { list ->
             list.map(cardInfoDataToDomainMapper::toDomain)
         }
-
 }
