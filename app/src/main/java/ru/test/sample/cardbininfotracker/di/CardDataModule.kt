@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ru.test.sample.cardbininfotracker.mapper.CardInfoDomainToPresentationMapper
+import ru.test.sample.data.datasource.CardInfoLocal
 import ru.test.sample.data.datasource.CardInfoRemote
 import ru.test.sample.data.mapper.CardInfoDataToDomainMapper
 import ru.test.sample.data.mapper.CardInfoDomainToDataMapper
@@ -29,9 +30,13 @@ class CardDataModule {
     @Singleton
     fun provideCardInfoRepository(
         dataSource: CardInfoRemote,
+        cardInfoLocal: CardInfoLocal,
         cardInfoDataToDomainMapper: CardInfoDataToDomainMapper,
+        cardInfoDomainToDataMapper: CardInfoDomainToDataMapper,
     ): CardInfoRepository = CardInfoRepositoryImpl(
         dataSource,
+        cardInfoLocal,
         cardInfoDataToDomainMapper,
+        cardInfoDomainToDataMapper,
     )
 }

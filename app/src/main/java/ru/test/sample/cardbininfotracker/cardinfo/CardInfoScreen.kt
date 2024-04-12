@@ -15,12 +15,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
 
 @Composable
-fun CardInfoScreen(viewModel: CardInfoViewModel) {
+fun CardInfoScreen(
+    viewModel: CardInfoViewModel,
+    navController: NavHostController
+) {
     val bin by viewModel.bin
-    val cardInfo by viewModel.cardInfo // Получаем информацию о карте из состояния
+    val cardInfo by viewModel.cardInfo
     val scope = rememberCoroutineScope()
 
     Column(
@@ -35,11 +39,13 @@ fun CardInfoScreen(viewModel: CardInfoViewModel) {
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Button(onClick = { scope.launch { viewModel.getCardInfo(bin) } }) {
             Text("Получить информацию")
         }
-        // Отображаем информацию о карте, если она доступна
+
         cardInfo?.let { info ->
             Text("Схема карты: ${info.scheme}")
             Text("Тип карты: ${info.type}")
@@ -51,6 +57,10 @@ fun CardInfoScreen(viewModel: CardInfoViewModel) {
             Text("Телефон банка: ${info.bankPresentationModel.phone}")
             Text("Широта: ${info.countryPresentationModel.latitude}")
             Text("Долгота: ${info.countryPresentationModel.longitude}")
+        }
+
+        Button(onClick = { navController.navigate("cardListScreen") }) {
+            Text("Перейти к списку карт")
         }
     }
 }

@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
 import ru.test.sample.cardbininfotracker.cardinfo.CardInfoScreen
 import ru.test.sample.cardbininfotracker.cardinfo.CardInfoViewModel
+import ru.test.sample.cardbininfotracker.navigation.AppNavigator
 import ru.test.sample.cardbininfotracker.ui.theme.CardBINInfoTrackerTheme
 
 @AndroidEntryPoint
@@ -30,8 +31,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CardInfoScreen(viewModel = cardInfoViewModel)
+//                    CardInfoScreen(viewModel = cardInfoViewModel)
                 }
+
+                AppNavigator(viewModel = cardInfoViewModel)
             }
         }
     }

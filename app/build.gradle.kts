@@ -56,6 +56,8 @@ dependencies {
 
     implementation(project(":data"))
     implementation(project(":domain"))
+    implementation(project(":database"))
+    implementation(project(":network"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -65,10 +67,20 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation ("androidx.navigation:navigation-compose:2.7.7")
+
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation (libs.lifecycle.compose.livedata)
+    implementation(libs.lifecycle.viewmodel)
+
+    //Room
+    implementation(libs.room.runtime)
+    kapt(libs.room.compiler)
+    implementation(libs.room.ktx)
+    androidTestImplementation(libs.room.testing)
 
     //Hilt
     implementation(libs.hilt.android)
-    implementation(project(":network"))
     kapt(libs.hilt.compiler)
 
     //Retrofit

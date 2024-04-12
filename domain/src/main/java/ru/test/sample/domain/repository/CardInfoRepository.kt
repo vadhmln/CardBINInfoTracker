@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface CardInfoRepository {
 
     suspend fun getBinInfo(bin: String): Flow<CardInfoDomainModel>
+
+    fun getAllCards(): Flow<List<CardInfoDomainModel>>
 }
