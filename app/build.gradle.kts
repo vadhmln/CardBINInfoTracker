@@ -71,7 +71,6 @@ dependencies {
 
     implementation(libs.lifecycle.runtime.ktx)
     implementation (libs.lifecycle.compose.livedata)
-    implementation(libs.lifecycle.viewmodel)
 
     //Room
     implementation(libs.room.runtime)

@@ -36,7 +36,7 @@ fun CardInfoScreen(
         OutlinedTextField(
             value = bin,
             onValueChange = { viewModel.onBinChanged(it) },
-            label = { Text("Введите 8 цифр карты") },
+            label = { Text("Введите BIN") },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
