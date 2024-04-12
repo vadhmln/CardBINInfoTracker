@@ -21,7 +21,7 @@ class CardInfoRepositoryImpl(
     private val cardInfoDomainToDataMapper: CardInfoDomainToDataMapper,
 ) : CardInfoRepository {
 
-    override suspend fun getBinInfo(bin: String) = flow {
+    override fun getBinInfo(bin: String) = flow {
         val response = remoteDataSource.getCardInfo(bin)
 
         response.suspendOnSuccess {
