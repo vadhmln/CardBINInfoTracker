@@ -20,7 +20,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CardInfoViewModel @Inject constructor(
     private val getCardInfoUseCase: GetCardInfoUseCase,
-    private val getAllCardsUseCase: GetAllCardsUseCase,
+    getAllCardsUseCase: GetAllCardsUseCase,
     private val cardInfoDomainToPresentationMapper: CardInfoDomainToPresentationMapper,
 ): ViewModel() {
 
