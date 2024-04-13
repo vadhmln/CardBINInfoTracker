@@ -1,12 +1,16 @@
 package ru.test.sample.cardbininfotracker.presentation
 
 import android.util.Log
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.map
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import ru.test.sample.cardbininfotracker.presentation.mapper.CardInfoDomainToPresentationMapper
 import ru.test.sample.cardbininfotracker.presentation.model.CardInfoPresentationModel
 import ru.test.sample.domain.usecase.GetAllCardsUseCase
@@ -20,28 +24,30 @@ class CardInfoViewModel @Inject constructor(
     private val cardInfoDomainToPresentationMapper: CardInfoDomainToPresentationMapper,
 ): ViewModel() {
 
-    var bin = mutableStateOf("")
-        private set
+    private var _bin = mutableStateOf("")
+    val bin: State<String> get() = _bin
 
-    // Добавляем состояние для информации о карте
-    var cardInfo = mutableStateOf<CardInfoPresentationModel?>(null)
-        private set
+    private var _cardInfo = mutableStateOf<CardInfoPresentationModel?>(null)
+    val cardInfo: State<CardInfoPresentationModel?> get() = _cardInfo
 
-    val cardInfoList = getAllCardsUseCase.execute().asLiveData().map {list ->
+    private val _cardInfoList = getAllCardsUseCase.execute().asLiveData().map {list ->
         list.map(cardInfoDomainToPresentationMapper::toPresentation)
     }
+    val cardInfoList: LiveData<List<CardInfoPresentationModel>> get() = _cardInfoList
 
-    suspend fun getCardInfo(bin: String) {
-        getCardInfoUseCase.execute(bin)
-            .map(cardInfoDomainToPresentationMapper::toPresentation)
-            .collect { result ->
-                Log.d("result", result.scheme)
-                // Обновляем состояние с полученной информацией
-                cardInfo.value = result
-            }
+    fun getCardInfo(bin: String) {
+        viewModelScope.launch {
+            getCardInfoUseCase.execute(bin)
+                .map(cardInfoDomainToPresentationMapper::toPresentation)
+                .collect { result ->
+                    Log.d("result", result.scheme)
+                    _cardInfo.value = result
+                }
+        }
     }
 
     fun onBinChanged(newBin: String) {
-        bin.value = newBin
+        _bin.value = newBin
     }
 }
+

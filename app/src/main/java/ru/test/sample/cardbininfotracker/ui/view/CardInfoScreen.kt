@@ -26,7 +26,6 @@ fun CardInfoScreen(
 ) {
     val bin by viewModel.bin
     val cardInfo by viewModel.cardInfo
-    val scope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -43,7 +42,7 @@ fun CardInfoScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = { scope.launch { viewModel.getCardInfo(bin) } }) {
+        Button(onClick = { viewModel.getCardInfo(bin) }) {
             Text("Получить информацию")
         }
 
@@ -65,3 +64,4 @@ fun CardInfoScreen(
         }
     }
 }
+
